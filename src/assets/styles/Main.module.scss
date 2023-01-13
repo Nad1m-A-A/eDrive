@@ -1,0 +1,40 @@
+@use './sass/variables/colors' as *;
+@use './sass/variables/fonts' as *;
+@import './sass/components/header';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: $body-font;
+    font-size: $normal-font-size;
+    color: $text-color;
+    background-color: $body-color;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: $title-color;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 1024px;
+    margin: auto;
+    background-color: $container-color;
+}

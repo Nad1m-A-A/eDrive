@@ -1,0 +1,11 @@
+@use '../variables/colors' as *;
+header {
+    height: 3.5rem;
+    width: 100%;
+    background-color: $first-color;
+    nav {
+        ul {
+            display: flex;
+        }
+    }
+}

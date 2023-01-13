@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;300;500;900&display=swap");
+/*.5rem = 8px | 1rem = 16px ...*/
+/*========== Big Fonts ==========*/
+header {
+  height: 3.5rem;
+  width: 100%;
+  background-color: rgb(65, 120, 220);
+}
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  font-size: 0.938rem;
+  color: rgb(186, 190, 196);
+  background-color: rgb(10, 10, 11);
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: rgb(241, 242, 243);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 1024px;
+  margin: auto;
+  background-color: rgb(17, 18, 19);
+}
