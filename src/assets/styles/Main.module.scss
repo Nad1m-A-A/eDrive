@@ -1,6 +1,7 @@
 @use './sass/variables/colors' as *;
 @use './sass/variables/fonts' as *;
 @import './sass/components/header';
+@import './sass/components/home';
 
 * {
     padding: 0;
@@ -34,7 +35,11 @@ img {
 }
 
 .container {
-    width: 1024px;
+    width: 70%;
     margin: auto;
-    background-color: $container-color;
+}
+
+section {
+    height: 100vh;
+    padding-block: 1rem;
 }

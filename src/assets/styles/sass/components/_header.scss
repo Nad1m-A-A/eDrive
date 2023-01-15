@@ -1,11 +1,54 @@
 @use '../variables/colors' as *;
+@use '../variables/fonts' as *;
+
 header {
     height: 3.5rem;
     width: 100%;
-    background-color: $first-color;
+    display: flex;
+    background-color: $container_color;
     nav {
-        ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .nav_logo_wrapper {
             display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            div {
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 70%;
+                }
+            }
+            span {
+                font-weight: 600;
+            }
+        }
+        .menu_bar {
+            display: block;
+        }
+        ul {
+            display: none;
+            li {
+                margin-left: 3rem;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    header {
+        nav {
+            .menu_bar {
+                display: none;
+            }
+            ul {
+                display: flex;
+            }
         }
     }
 }
