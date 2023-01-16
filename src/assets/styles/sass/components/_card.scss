@@ -1,0 +1,67 @@
+@use '../variables/colors' as *;
+@use '../variables/fonts' as *;
+
+.card {
+    padding: 1.3rem;
+    color: $white-color;
+    background-color: $container-color;
+    border-radius: 10px;
+    width: 224.8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    &:hover .img_holder {
+        transform: translateY(-.24rem);
+    }
+    .tiny_shadow {
+        top: -4rem;
+        left: -4rem;
+        width: 200px;
+        height: 200px;
+    }
+    .titles {
+        position: relative;
+        h3 {
+            font-size: 22px;
+        }
+        h4 {
+            color: $text-color-light;
+            font-weight: 600;
+        }
+    }
+    .img_holder {
+        position: relative;
+        align-self: center;
+        transition: 200ms;
+        img {
+            width: 200px;
+        }
+    }
+    .features {
+        position: relative;
+        line-height: 1.7;
+        svg {
+            color: $first-color;
+            margin-right: 1rem;
+        }
+    }
+    .price {
+        position: relative;
+        padding-top: 0.3rem;
+        font-weight: 700;
+    }
+    .deal_icon_holder {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: $first-color;
+        padding: 1rem 0.9rem;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: -1px -1px 5px black;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}

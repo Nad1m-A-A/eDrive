@@ -6,6 +6,8 @@ header {
     width: 100%;
     display: flex;
     background-color: $container_color;
+    z-index: 100;
+    position: fixed;
     nav {
         display: flex;
         justify-content: space-between;

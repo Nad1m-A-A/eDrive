@@ -2,6 +2,9 @@
 @use './sass/variables/fonts' as *;
 @import './sass/components/header';
 @import './sass/components/home';
+@import './sass/components/about';
+@import './sass/components/popular';
+@import './sass/components/card';
 
 * {
     padding: 0;
@@ -22,6 +25,7 @@ body {
     font-size: $normal-font-size;
     color: $text-color;
     background-color: $body-color;
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -40,6 +44,18 @@ img {
 }
 
 section {
-    height: 100vh;
-    padding-block: 1rem;
+    // height: 100vh;
+    padding-block: 4rem;
+    padding-inline: 2rem;
+}
+
+button {
+    font-family: $body-font;
+}
+
+.shadow {
+    position: absolute;
+    border-radius: 50%;
+    background-color: hsla(219, 33%, 32%, 0.5);
+    filter: blur(112px);
 }
