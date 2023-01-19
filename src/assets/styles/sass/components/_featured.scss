@@ -1,0 +1,98 @@
+@use '../variables/colors' as *;
+@use '../variables/fonts' as *;
+
+.featured {
+    h2 {
+        text-align: center;
+    }
+    .featured_container {
+        min-height: 868.983px;
+        padding-top: 3rem;
+        ul {
+            display: flex;
+            column-gap: 1rem;
+            justify-content: center;
+            max-width: 300px;
+            margin: 0 auto;
+            .active {
+                background-color: $first_color;
+                color: $white_color;
+                img {
+                    color: $white_color;
+                    filter: none;
+                }
+            }
+            li {
+                background-color: $container_color;
+                width: 55px;
+                height: 55px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 0.3s;
+                &:hover {
+                    background-color: $first_color;
+                    color: $white_color;
+                    img {
+                        color: $white_color;
+                        filter: none;
+                    }
+                }
+                img {
+                    padding: 0.75rem;
+                    height: 100%;
+                    object-fit: contain;
+                    color: $text-color-light;
+                    filter: contrast(1%);
+                }
+            }
+        }
+        .featured_group {
+            max-width: 800px;
+            padding: 3rem;
+            margin: 0 auto;
+            display: grid;
+            justify-content: center;
+            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            .card {
+                animation: fade_in 200ms;
+            }
+        }
+    }
+}
+
+@keyframes fade_in {
+    from {
+        transform: scale(0.7);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .featured {
+        .featured_container {
+            .featured_group {
+                max-width: 550px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .featured {
+        .featured_container {
+            .featured_group {
+                max-width: 400px;
+                grid-template-columns: repeat(1, 1fr);
+                justify-items: center;
+            }
+        }
+    }
+}

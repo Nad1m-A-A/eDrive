@@ -1,0 +1,56 @@
+@use '../variables/colors' as *;
+@use '../variables/fonts' as *;
+
+.features {
+    position: relative;
+    display: grid;
+    place-items: center;
+    h2 {
+        text-align: center;
+    }
+    .map_img {
+        padding-left: 2.5rem;
+        position: absolute;
+        top: 8rem;
+        width: 450px;
+        max-width: initial;
+        transform: rotate(-22deg);
+    }
+    .features_container {
+        padding-top: 5rem;
+        .car_img_holder {
+            position: relative;
+            z-index: 10;
+            max-width: 250px;
+            img {
+                justify-self: center;
+                width: 150px;
+            }
+            .features_card {
+                h3 {
+                    margin-bottom: 0.3rem;
+                }
+                font-size: 14px;
+                background-color: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(112px);
+                padding: 0.7rem;
+                text-align: center;
+                width: 6rem;
+                border-radius: 20px;
+                position: absolute;
+            }
+            .features_card1 {
+                top: 4rem;
+                right: -2.5rem;
+            }
+            .features_card2 {
+                top: 10rem;
+                left: -2.5rem;
+            }
+            .features_card3 {
+                bottom: 1rem;
+                right: -2.5rem;
+            }
+        }
+    }
+}

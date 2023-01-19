@@ -8,8 +8,8 @@ function Home() {
     return (
         <section className={classes.home} id="home">
             <div className={classes.home_container}>
-            <div className={`${classes.shadow} ${classes.big_shadow}`}/>
-            <div className={`${classes.shadow} ${classes.small_shadow}`}/>
+            <div className={`${classes.shadow} ${classes.big_shadow_left}`}/>
+            <div className={`${classes.shadow} ${classes.big_shadow_right}`}/>
                 <div className={classes.heading}>
                     <h1>Choose The Best Car</h1>
                     <h3>Porsche Mission E</h3>
@@ -20,7 +20,7 @@ function Home() {
                 </div>
 
                 <div className={classes.main_img_holder}>
-                    <img src={homeImg} alt='White Porsche Car'/>
+                    <img src={homeImg} draggable="false" alt='White Porsche Car'/>
                 </div>
 
                 <div className={classes.features}>

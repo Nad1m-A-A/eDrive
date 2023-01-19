@@ -9,15 +9,35 @@
         }
         .cards_holder {
             align-self: center;
-            padding: 1rem;
+            padding: 0.9rem;
             padding-bottom: 3rem;
-            margin-top: 4rem;
+            margin-top: 2rem;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            max-width: 800px;
+            max-width: calc(224.8px * 3 + 2rem);
+        }
+    }
+}
+
+@media screen and (max-width: 789px) {
+    .popular {
+        .popular_container {
+            .cards_holder {
+                max-width: calc(224.8px * 2 + 2rem);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .popular {
+        .popular_container {
+            .cards_holder {
+                max-width: calc(224.8px * 1 + 2rem);
+            }
         }
     }
 }

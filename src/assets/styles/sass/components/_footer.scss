@@ -1,0 +1,72 @@
+@use '../variables/colors' as *;
+@use '../variables/fonts' as *;
+
+.footer {
+    padding-bottom: 2rem;
+    .footer_container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        & > div {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+        ul {
+            li {
+                &:hover {
+                    color: $white-color;
+                }
+                transition: 300ms;
+                cursor: pointer;
+                color: $text-color-light;
+                padding-block: .2rem;
+            }
+        }
+        .introduction {
+            .logo_wrapper {
+                display: flex;
+                align-items: center;
+                column-gap: 0.3rem;
+                span {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+            p {
+                color: $text-color-light;
+                width: 15rem;
+            }
+        }
+        .socials {
+            ul {
+                display: flex;
+                column-gap: 2rem;
+            }
+        }
+    }
+    .rights {
+        text-align: center;
+        padding-top: 5rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .footer {
+        .footer_container {
+            max-width: 400px;
+            margin: 0 auto;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            justify-items: left;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer {
+        .footer_container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

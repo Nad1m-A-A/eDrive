@@ -16,26 +16,31 @@ function popular() {
     const popularCollection = [
         {
             img: popular1,
+            title: 'Porsche',
             subtitle: 'Turbo S',
             price: '$175,900',
         },
         {
             img: popular2,
+            title: 'Porsche',
             subtitle: 'Taycan',
             price: '$114,900',
         },
         {
             img: popular3,
+            title: 'Porsche',
             subtitle: 'Turbo S Cross',
             price: '$150,900',
         },
         {
             img: popular4,
+            title: 'Porsche',
             subtitle: 'Boxster 718',
             price: '$125,900',
         },
         {
             img: popular5,
+            title: 'Porsche',
             subtitle: 'Cayman',
             price: '$128,900',
         },
@@ -47,7 +52,7 @@ function popular() {
                 <Swiper
                 className={classes.cards_holder} 
                 spaceBetween={-50}
-                loop={true}
+                // loop={true}
                 grabCursor={true}
                 slidesPerView={2}
                 centeredSlides={true}
@@ -61,22 +66,22 @@ function popular() {
                 breakpoints={{
                     340: {
                         width: 340,
-                        slidesPerView: 1.1,
+                        slidesPerView: 1,
                     },
                     // when window width is >= 640px
                     640: {
                         width: 640,
-                        slidesPerView: 2.3,
+                        slidesPerView: 2,
                     },
                     // when window width is >= 768px
-                    768: {
-                        width: 768,
-                        slidesPerView: 2.9,
+                    780: {
+                        width: 780,
+                        slidesPerView: 2.96,
                     },
                 }}
                 >
                     {popularCollection.map((car, index) => {
-                        return <SwiperSlide key={index}><Card img={car.img} subtitle={car.subtitle} price={car.price}/></SwiperSlide>
+                        return <SwiperSlide key={index}><Card img={car.img} title={car.title} subtitle={car.subtitle} price={car.price}/></SwiperSlide>
                     })}
                     <div className={`swiper-pagination ${classes.pagination}`}></div>
                 </Swiper>

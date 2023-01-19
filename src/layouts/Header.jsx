@@ -8,7 +8,7 @@ function Header() {
         <header>
             <nav className={classes.container}>
                 <div className={classes.nav_logo_wrapper}>
-                    <div><img src={logo} alt={'logo'}></img></div>
+                    <div><img src={logo} draggable="false" alt={'logo'}></img></div>
                     <span>eDrive</span>
                 </div>
                 <FaBars className={classes.menu_bar}/>

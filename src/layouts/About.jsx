@@ -5,7 +5,7 @@ import aboutImg from '../assets/images/about.png'
 
 function About() {
     return (
-        <section className={classes.about} id="about">
+        <section className={`${classes.about}`} id="about">
             <div className={classes.about_container}>
                 <div className={classes.img_holder}>
                     <img src={aboutImg} alt="A look inside a Porsche car"/>

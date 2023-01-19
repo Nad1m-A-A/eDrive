@@ -4,21 +4,23 @@
 .home {
     padding-top: calc(3.5rem + 3rem);
     .home_container {
+        max-width: 400px;
+        margin: 0 auto;
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         row-gap: 3rem;
-        .big_shadow {
-            top: -4rem;
-            left: -4rem;
-            width: 400px;
-            height: 400px;
+        .big_shadow_left {
+            top: 3rem;
+            left: -10rem;
+            width: 300px;
+            height: 300px;
         }
-        .small_shadow {
-            bottom: 0;
-            right: -4rem;
+        .big_shadow_right {
+            top: 3rem;
+            right: -10rem;
             width: 300px;
             height: 300px;
         }
@@ -49,6 +51,7 @@
         .main_img_holder {
             position: relative;
             img {
+                user-select: none;
                 width: 280px;
             }
         }
@@ -95,7 +98,7 @@
             width: 70px;
             height: 70px;
             margin-top: 2rem;
-            border: solid 2px rgb(2, 217, 138);
+            border: solid 2px $first-color-alt;
             background-color: transparent;
             position: relative;
             display: flex;
@@ -107,8 +110,8 @@
                 height: 90px;
                 position: absolute;
                 border-radius: 50%;
-                border: solid 2px rgb(2, 217, 138);
-                box-shadow: 0px 0px 12px rgb(2, 217, 138);
+                border: solid 2px $first-color-alt;
+                box-shadow: 0px 0px 12px $first-color-alt;
             }
         }
     }

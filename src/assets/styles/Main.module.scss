@@ -5,6 +5,11 @@
 @import './sass/components/about';
 @import './sass/components/popular';
 @import './sass/components/card';
+@import './sass/components/extra';
+@import './sass/components/featured';
+@import './sass/components/offer';
+@import './sass/components/logos';
+@import './sass/components/footer';
 
 * {
     padding: 0;
@@ -35,6 +40,7 @@ h1, h2, h3 {
 
 img {
     max-width: 100%;
+    user-select: none;
     height: auto;
 }
 
@@ -44,13 +50,15 @@ img {
 }
 
 section {
-    // height: 100vh;
     padding-block: 4rem;
     padding-inline: 2rem;
 }
 
 button {
     font-family: $body-font;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .shadow {

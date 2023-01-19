@@ -1,0 +1,31 @@
+@use '../variables/colors' as *;
+@use '../variables/fonts' as *;
+
+.logos {
+    .logos_container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+        row-gap: 5rem;
+        max-width: 600px;
+        margin: 0 auto;
+        img {
+            cursor: none;
+            filter: contrast(20%);
+            width: 50px;
+            transition: 300ms;
+            &:hover {
+                filter: contrast(100%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logos {
+        .logos_container {
+        max-width: 300px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
