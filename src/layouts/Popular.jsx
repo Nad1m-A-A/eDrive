@@ -47,12 +47,12 @@ function popular() {
     ]
     return (
         <section className={classes.popular} id="popular">
+            <h2>Choose Your Electric Car <br/> Of The Porsche Brand</h2>
             <div className={classes.popular_container}>
-                <h2>Choose Your Electric Car <br/> Of The Porsche Brand</h2>
                 <Swiper
                 className={classes.cards_holder} 
                 spaceBetween={-50}
-                // loop={true}
+                loop={true}
                 grabCursor={true}
                 slidesPerView={2}
                 centeredSlides={true}

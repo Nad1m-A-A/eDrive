@@ -9,8 +9,9 @@
     position: relative;
     overflow: hidden;
     .tiny_shadow {
+        filter: blur(50px);
         top: -4rem;
-        right: -4rem;
+        left: -4rem;
         width: 200px;
         height: 200px;
     }
@@ -27,15 +28,18 @@
         .titles {
             h3 {
                 font-size: 22px;
+                // color: $container-color;
+
             }
             h4 {
                 color: $text-color-light;
+                // color: $container-color;
                 font-weight: 600;
             }
         }
         .img_holder {
             align-self: center;
-            transition: 200ms;
+            transition: 300ms;
             img {
                 width: 200px;
             }

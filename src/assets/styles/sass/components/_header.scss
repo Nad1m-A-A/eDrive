@@ -1,6 +1,5 @@
 @use '../variables/colors' as *;
 @use '../variables/fonts' as *;
-
 header {
     height: 3.5rem;
     width: 100%;
@@ -28,29 +27,83 @@ header {
                 font-weight: 600;
             }
         }
-        .menu_bar {
-            display: block;
-        }
         ul {
-            display: none;
+            display: flex;
+            column-gap: 3rem;
             li {
-                margin-left: 3rem;
                 font-size: 16px;
                 cursor: pointer;
+            }
+        }
+        .menu_bar {
+            display: none;
+            cursor: pointer;
+        }
+
+    }
+}
+
+@media screen and (max-width: 699px) {
+    header {
+        nav {
+        .menu_bar {
+            display: flex;
+        }
+        .overlay {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 100%;
+            bottom: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.444);
+        }
+            ul {
+                flex-direction: column;
+                row-gap: 2rem;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                padding-top: 3rem;
+                padding-inline: 3rem;
+                height: 100vh;
+                background-color: $first_color-alt;
+                li {
+                    font-size: 18px;
+                    cursor: pointer;
+                }
+            }
+            .visible {
+                animation: nav_fade_in 500ms;
+                display: flex;
+            }
+            .invisible {
+                display: none;
+            }
+            .fade_out {
+                animation: nav_fade_out 500ms;
             }
         }
     }
 }
 
-@media screen and (min-width: 700px) {
-    header {
-        nav {
-            .menu_bar {
-                display: none;
-            }
-            ul {
-                display: flex;
-            }
-        }
+@keyframes nav_fade_in {
+    from {
+        right: -10rem;
+        left: 100%;
+    }
+    to {
+        right: 0;
+    }
+}
+
+@keyframes nav_fade_out {
+    from {
+        right: 0;
+    }
+    to {
+        right: -10rem;
+        left: 100%;
     }
 }

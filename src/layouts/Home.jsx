@@ -3,6 +3,7 @@ import classes from '../assets/styles/Main.module.css'
 import {GiElectric} from 'react-icons/gi'
 import homeImg from '../assets/images/home.png'
 import {BsThermometerLow, BsSpeedometer2} from 'react-icons/bs'
+import {Link as SmoothLink} from 'react-scroll'
 
 function Home() {
     return (
@@ -59,8 +60,8 @@ function Home() {
                     </div>
                 </div>
 
-                <div>
-                    <button>Start</button>
+                <div className={classes.start}>
+                    <SmoothLink to="popular" spy={true} smooth={true} offset={-60} duration={500}>Start</SmoothLink>
                 </div>
             </div>
         </section>

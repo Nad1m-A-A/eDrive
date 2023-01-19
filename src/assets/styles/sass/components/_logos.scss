@@ -4,10 +4,10 @@
 .logos {
     .logos_container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         place-items: center;
-        row-gap: 5rem;
-        max-width: 600px;
+        column-gap: 4rem;
+        max-width: 800px;
         margin: 0 auto;
         img {
             cursor: none;
@@ -17,6 +17,16 @@
             &:hover {
                 filter: contrast(100%);
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .logos {
+        .logos_container {
+            row-gap: 5rem;
+            column-gap: 0rem;
+        grid-template-columns: repeat(3, 1fr);
         }
     }
 }

@@ -11,12 +11,12 @@ function Logos() {
     return (
         <section className={classes.logos}>
             <div className={classes.logos_container}>
-                <img src={logo1} draggable="false" alt="Porsche Bran"/>
-                <img src={logo2} draggable="false" alt="Audi Bran"/>
-                <img src={logo3} draggable="false" alt="Tesla Bran"/>
-                <img src={logo4} draggable="false" alt="Lamborghini Bran"/>
-                <img src={logo5} draggable="false" alt="BMW Bran"/>
-                <img src={logo6} draggable="false" alt="Mitsubishi Bran"/>
+                <img src={logo1} draggable="false" alt="Porsche Brand"/>
+                <img src={logo2} draggable="false" alt="Audi Brand"/>
+                <img src={logo3} draggable="false" alt="Tesla Brand"/>
+                <img src={logo4} draggable="false" alt="Lamborghini Brand"/>
+                <img src={logo5} draggable="false" alt="BMW Brand"/>
+                <img src={logo6} draggable="false" alt="Mitsubishi Brand"/>
             </div>
         </section>
     )

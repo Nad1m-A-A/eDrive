@@ -6,7 +6,7 @@ import {FaHandshake} from 'react-icons/fa'
 
 function Card(props) {
     return (
-        <div className={classes.card}>
+        <div className={`${classes.card} ${props.className}`}>
             <div className={`${classes.shadow} ${classes.tiny_shadow}`}></div>
             <div className={classes.card_data_holder}>
                 <div className={classes.titles}>

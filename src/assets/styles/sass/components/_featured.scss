@@ -2,6 +2,7 @@
 @use '../variables/fonts' as *;
 
 .featured {
+    padding-top: 6rem;
     h2 {
         text-align: center;
     }
@@ -57,8 +58,11 @@
             justify-content: center;
             gap: 1rem;
             grid-template-columns: repeat(3, 1fr);
-            .card {
-                animation: fade_in 200ms;
+            .fade_in {
+                animation: fade_in 500ms;
+            }
+            .fade_out {
+                animation: fade_out 300ms;
             }
         }
     }
@@ -66,12 +70,26 @@
 
 @keyframes fade_in {
     from {
+        opacity: 0;
         transform: scale(0.7);
+
     }
     to {
+        opacity: 1;
         transform: scale(1);
+
     }
 }
+
+@keyframes fade_out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 
 
 @media screen and (max-width: 800px) {

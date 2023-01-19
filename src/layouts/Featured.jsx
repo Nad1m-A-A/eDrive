@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+
+import React, { useState, useEffect, useMemo, useRef } from 'react'
 import tesla from '../assets/images/logo3.png'
 import porsche from '../assets/images/logo1.png'
 import audi from '../assets/images/logo2.png'
@@ -12,7 +13,8 @@ import Card from '../components/Card'
 import classes from '../assets/styles/Main.module.css'
 
 function Featured() {
-    const featuredGroup = [
+    const featuredGroup = useMemo(() => {
+    return [
         {
             img: teslaCar1,
             title: 'Tesla',
@@ -44,42 +46,66 @@ function Featured() {
             price: '$126,900',
         },
     ]
-    const [selectedGroup, setSelectedGroup] = useState(featuredGroup);
-    const [activeGroup, setActiveGroup] = useState('all');
+}, [])
 
-    function changeGroup(e) {
-        const group = e.target.getAttribute('group');
-        if(group === 'all') {
-            setSelectedGroup(featuredGroup)
-            setActiveGroup('all')
+    const [selectedGroup, setSelectedGroup] = useState(featuredGroup);
+    const [activeButton, setActiveButton] = useState('all');
+    const [cardClasses, setCardClasses] = useState('');
+    const ref = useRef(true)
+    useEffect(() => {
+        const firstRun = ref.current
+        if(firstRun) {
+            ref.current = false;
         } else {
-            const newGroup = featuredGroup.filter(item => item.title.toLocaleLowerCase() === group)
-            setSelectedGroup(newGroup);
-            setActiveGroup(group)
+            setCardClasses(classes.fade_out);
+            setTimeout(() => {
+            setSelectedGroup([]);
+            }, 300) // 300 is the time of the fade_out animation (let the fade_out finish then clear the state)
+            setTimeout(() => {
+                if(activeButton === 'all') {
+                    setSelectedGroup(featuredGroup)
+                    setCardClasses(classes.fade_in)
+                }
+                if (activeButton === 'tesla') {
+                    setSelectedGroup(featuredGroup.filter(item => item.title.toLocaleLowerCase() === 'tesla'))
+                    setCardClasses(classes.fade_in)
+
+                    
+                }
+                if (activeButton === 'porsche') {
+                    setSelectedGroup(featuredGroup.filter(item => item.title.toLocaleLowerCase() === 'porsche'))
+                    setCardClasses(classes.fade_in)
+                    
+                }
+                if (activeButton === 'audi') {
+                    setSelectedGroup(featuredGroup.filter(item => item.title.toLocaleLowerCase() === 'audi'))
+                    setCardClasses(classes.fade_in)
+                }
+            }, 300)
         }
-    }
+    },[featuredGroup, activeButton])
 
     return (
         <section className={classes.featured} id="featured">
             <h2>Featured Luxury Cars</h2>
             <div className={classes.featured_container}>
                 <ul>
-                    <li onClick={changeGroup} group="all" className={activeGroup === 'all' ? classes.active : ''}>
+                    <li onClick={() => setActiveButton('all')} group="all" className={activeButton === 'all' ? classes.active : ''}>
                         ALL
                     </li>
-                    <li onClick={changeGroup} className={activeGroup === 'tesla' ? classes.active : ''}>
+                    <li onClick={() => setActiveButton('tesla')} className={activeButton === 'tesla' ? classes.active : ''}>
                         <img src={tesla} alt="Tesla Brand" group="tesla"/>
                     </li>
-                    <li onClick={changeGroup} className={activeGroup === 'porsche' ? classes.active : ''}>
+                    <li onClick={() => setActiveButton('porsche')} className={activeButton === 'porsche' ? classes.active : ''}>
                         <img src={porsche} alt="Porsche Brand" group="porsche"/>
                     </li>
-                    <li onClick={changeGroup} className={activeGroup === 'audi' ? classes.active : ''}>
+                    <li onClick={() => setActiveButton('audi')} className={activeButton === 'audi' ? classes.active : ''}>
                         <img src={audi} alt="Audi Brand" group="audi"/>
                     </li>
                 </ul>
                 <div className={classes.featured_group}>
                     {selectedGroup.map((car, index) => {
-                        return <Card key={index} img={car.img} title={car.title} subtitle={car.subtitle} price={car.price}/>
+                        return <Card className={cardClasses} key={index} img={car.img} title={car.title} subtitle={car.subtitle} price={car.price}/>
                     })}
                 </div>
             </div>
@@ -88,4 +114,3 @@ function Featured() {
 }
 
 export default Featured
-
