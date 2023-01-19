@@ -31,7 +31,7 @@ function Header() {
                     <span>eDrive</span>
                 </div>
                 {!navigating && <FaBars onClick={() => setNavigating(true)} className={classes.menu_bar}/>}
-                {navigating && <IoIosExit onClick={() => setNavigating(false)} className={classes.menu_bar}/>}
+                {navigating && <IoIosExit onClick={() => setNavigating(false)} className={`${classes.menu_bar} ${classes.exit_icon}`}/>}
                 <div onClick={() => setNavigating(false)} className={`${navigating ? classes.visible : overlayClass} ${classes.overlay}`}></div>
                 <ul className={navigating ? classes.visible : ulClass}>
                     <li className={classes.nav_link}><SmoothLink onClick={() => setNavigating(false)} to="home" spy={true} smooth={true} offset={-60} duration={500}>Home</SmoothLink></li>

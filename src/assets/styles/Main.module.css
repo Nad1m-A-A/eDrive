@@ -79,6 +79,9 @@ header nav .menu_bar {
   display: none;
   cursor: pointer;
 }
+header nav .exit_icon {
+  font-size: 22px;
+}
 
 @media screen and (max-width: 699px) {
   header nav .menu_bar {
@@ -544,6 +547,7 @@ header nav .menu_bar {
 /*.5rem = 8px | 1rem = 16px ...*/
 /*========== Big Fonts ==========*/
 .features {
+  overflow: hidden;
   position: relative;
   display: -ms-grid;
   display: grid;

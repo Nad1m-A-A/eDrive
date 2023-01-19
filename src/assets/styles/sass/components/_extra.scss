@@ -2,6 +2,7 @@
 @use '../variables/fonts' as *;
 
 .features {
+    overflow: hidden;
     position: relative;
     display: grid;
     place-items: center;
